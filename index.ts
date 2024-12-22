@@ -2,6 +2,9 @@ import express from "express";
 import ejs from "ejs";
 import dotenv from "dotenv"
 import session from "./session";
+import path from "path";
+
+const __dirname = path.resolve(); // Resolve the current directory
 const {MongoClient} = require('mongodb');
 const bcrypt = require('bcrypt')
 
@@ -54,6 +57,9 @@ const isAuth = (req:any, res:any, next:any) =>{
         res.redirect("/login")
     }
 }
+
+app.set("views", path.join(__dirname, "views")); // Absolute path for views
+app.use(express.static(path.join(__dirname, "public"))); // Absolute path for static files
 
 app.set("view engine", "ejs");
 app.set("port", 3000);
