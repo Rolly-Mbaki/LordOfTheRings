@@ -47,7 +47,7 @@ let user:User = {
 //middleware
 app.use(session)
 app.use(express.json())
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}))
 
 const isAuth = (req:any, res:any, next:any) =>{
