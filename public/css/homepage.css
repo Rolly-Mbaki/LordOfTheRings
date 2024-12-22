@@ -1,0 +1,143 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #e3b737;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    background-image: url("../assets/LOTRMain.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+header{
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+    margin: 20px auto 20px auto;
+}
+
+.quiz{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quotes{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 350px;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+.card-img{
+    opacity: 0.7;
+    transition: all 1s ease-out;
+}
+
+.card:hover .card-img{
+    opacity: .1;
+    transition: all 1s ease-out;
+}
+
+.card-title{
+    text-align: center;
+    font-size: 26pt;
+    transition: all 1s ease-out;
+    font-weight: 900;
+    color: white;
+}
+
+.card:hover .card-title{
+    margin: 0;
+    font-size: 20pt;
+    text-decoration: underline;
+    transition: all 1s ease-out;
+}
+
+.card-text{
+    display: none;
+    transition: all 1s ease-out;
+    font-size: 14pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin-top: 15px;
+}
+
+.card:hover .card-text{
+    display: block;
+    transition: all 1s ease-out;
+}
+
+.card-info{
+    opacity: 1;
+    text-align: center;
+    transition: all 1s ease-out;
+    font-size: 16pt;
+    font-weight: 900;
+    color: white;
+}
+
+.card:hover .card-info{
+    opacity: 0;
+    transition: all 1s ease-out;
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .card{
+        width: 300px;
+    }
+    
+    .card-title{
+        font-size: 22pt;
+    }
+    
+    .card:hover .card-title{
+        font-size: 18pt;
+    }
+    
+    .card-text{
+        font-size: 12pt;
+    }
+    
+    .card-info{
+        font-size: 14pt;
+    }
+    
+    .card:hover .card-info{
+        opacity: 0;
+        transition: all 1s ease-out;
+        display: none;
+    }
+  }

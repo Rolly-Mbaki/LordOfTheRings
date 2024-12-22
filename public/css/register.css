@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #e3b737;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    background-image: url("../assets/lotrRegister.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} 
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.kaart{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: rgb(91, 34, 15);
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+form{
+    width: inherit;
+    padding: 20px;
+}
+
+form *{
+    display: block;
+    width: 100%;
+}
+input{
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14pt;
+    color: black;
+}
+
+button{
+    border: none;
+    background-color: rgb(91, 34, 15);
+    padding: 10px;
+    font-size: 20pt;
+}
+
+button:hover{
+    background-color: rgba(48, 15, 4);
+    color: #d17600;
+    cursor: pointer;
+}
+
+a{
+    text-align: center;
+    margin-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+}
+
+h1{
+    font-size: 30pt;
+}
+ 
+.error{
+    font-size: 20pt;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: red;
+}
+
+@media only screen and (max-width: 750px) {
+    .kaart{
+        width: 300px;
+    }
+    .error{
+        font-size: 16pt;
+    }
+  }

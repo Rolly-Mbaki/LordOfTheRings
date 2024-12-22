@@ -1,0 +1,172 @@
+.logo{
+    width: 100px;
+}
+nav {
+    width: 100%;
+    background: rgba(40, 16, 1, 0.5);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+    z-index: 10000;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+/* nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 50px;
+    margin:0;
+}
+
+nav ul li a{
+    font-weight: 400;
+    text-decoration: none;
+    color: #e3b737;
+    font-size: 18pt;
+}
+
+nav ul li a:hover{
+    color: #d17600;
+    font-weight: 900;
+}
+
+.nav-text{
+    margin: 0;
+    font-size: 18pt;
+} */
+
+/*Begin dropdown code W3Schools*/
+
+.dropbtn {
+    background-color: transparent;
+    padding: 5px;
+    font-size: 16pt;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(40, 16, 1);
+    backdrop-filter: blur(20px);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: #e3b737;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16pt;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    color: #d17600;
+    background-color: rgba(40, 16, 1);
+}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    color: #d17600;
+  }
+
+/*Einde dropdown code*/
+
+#topnav{
+    display: none;
+}
+
+.logout{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    font-size: 16pt;
+    text-align: left;
+    padding: 12px 16px;
+}
+.logout:hover{
+    color: #d17600;
+}
+
+@media only screen and (max-width: 750px) {
+    .mobile-nav{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .mobile-nav .dropdown{
+        text-align: center;
+    }
+    .fa-bars{
+        font-size: 25pt;
+    }
+
+    .topmobilenav{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav{
+        display: none;
+    }
+
+    #topnav{
+        display: none;
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    .dropdown{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropbtn{
+        padding: 5px;
+        font-size: 25pt;
+        color: #d17600;
+    }
+
+    .dropdown a{
+        margin: 20px;
+        color: #e3b737;
+        font-size: 16pt;
+    }
+    .logout-mobile{
+        border: none;
+        background-color: transparent;
+        font-size: 16pt;
+        padding: 12px 16px;
+        text-align: center;
+        text-decoration: underline;
+        width: auto;
+    }
+  }

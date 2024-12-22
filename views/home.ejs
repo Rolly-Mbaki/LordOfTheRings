@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuis</title>
+    <link rel="icon" type="image/x-icon" href="../assets/lotr.ico">
+    <link rel="stylesheet" href="../css/homepage.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <script src="../js/dropdownMenu.js"></script>
+    <script src="https://kit.fontawesome.com/2391a493c1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <%- include("partials/header") %>
+    
+    <main>
+
+        <section class="quiz">
+
+            <div class="card text-bg-dark border-0" onclick="TenRound()">
+                <img src="../assets/LOTR10ROUNDS.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">10 Rounds Quiz</h5>
+                    <p class="card-info">Sta op de kaart voor meer info</p>
+                    <p class="card-text">Test je kennis van "The Lord of the Rings" door quotes aan personages te koppelen. Na 10 vragen wordt je eindscore getoond, een leuke manier om je kennis te testen en terug te keren naar de wereld van "Middle-earth".</p>
+                </div>
+            </div>
+
+            <div class="card text-bg-dark border-0" onclick="SuddenDeath()">
+                <img src="../assets/LOTRSD.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Sudden Death Quiz</h5>
+                    <p class="card-info">Sta op de kaart voor meer info</p>
+                    <p class="card-text">De "Sudden Death Quiz" is een snelle LOTR-quiz waarbij deelnemers quotes aan personages koppelen voor punten. Het doel is om zoveel mogelijk juiste combinaties te maken. Bij een fout stopt het spel en krijg je jouw highscore te zien.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="quotes">
+            
+            <div class="card text-bg-dark border-0" onclick="Favorieten()">
+                <img src="../assets/LOTRFav.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Favoriete Quotes</h5>
+                    <p class="card-info">Sta op de kaart voor meer info</p>
+                    <p class="card-text">Hier staan je favoriete quotes opgelijst met de naam van het karakter van wie de quote komt. Je kan quotes verwijderen of ze allemaal exporteren naar een tekstbestand.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card text-bg-dark border-0" onclick="BLacklisted()">
+                <img src="../assets/LOTRBlacklist.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Blacklisted Quotes</h5>
+                    <p class="card-info">Sta op de kaart voor meer info</p>
+                    <p class="card-text">Hier staan al je geblackliste quotes. Deze komen niet voor in de quiz, je kan de reden zien en aanpassen. Je kan een geblackliste quote verwijderen.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include("partials/footer") %>
+    
+</body>
+</html>
+<script>
+    function TenRound() {
+        const url = "/tenRound"
+        window.location = url
+    }
+    function SuddenDeath() {
+        const url = "/suddenDeath"
+        window.location = url
+    }
+    function Favorieten() {
+        const url = "/fav"
+        window.location = url
+    }
+    function BLacklisted() {
+        const url = "/blacklist"
+        window.location = url
+    }
+</script>

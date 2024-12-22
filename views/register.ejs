@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css">
+    <title>Registratie</title>
+    <link rel="icon" type="image/x-icon" href="../assets/lotr.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <script src="../js/dropdownMenu.js"></script>
+    <script src="https://kit.fontawesome.com/2391a493c1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+
+    </header>
+
+    <main>
+        <div class="kaart">
+            <h1>Registratie</h1>
+            <p class="error"><%= locals.message %></p>
+            <form action="/register" method="POST">
+                <input type="email" placeholder="E-mailadres" name="email">
+                <input type="text" placeholder="Gebruikersnaam" name="username">
+                <input type="password" placeholder="Wachtwoord" name="password">
+                <button type="submit">Registreer</button>
+                <a href="/login">Ik heb al een account</a>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+
+</body>
+</html>

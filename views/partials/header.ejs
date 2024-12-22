@@ -1,0 +1,54 @@
+<header>
+
+    <nav class="mobile-nav">
+        <section class="topmobilenav">
+            <a href="/home"><img class="logo" src="../assets/lotr.png" alt=""></a>
+            <a href="javascript:void(0)" onclick="dropdownMenu()" class="bars"><i class="fa-solid fa-bars"></i></a>
+        </section>
+        <section id="topnav">
+            <div class="dropdown">
+                <button class="dropbtn">Quizes</button>
+                  <a href="/tenRound">10 Rounds</a>
+                  <a href="/suddenDeath">Sudden Death</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Quotes</button>
+                  <a href="/fav">Favorieten</a>
+                  <a href="/blacklist">Blacklisted</a>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">welkom, <%= locals.user.username %></button>
+                <form action="/logout" method="POST">
+                  <button class="logout-mobile">Log uit</button>
+                </form>
+            </div>
+        </section>
+    </nav>
+
+    <nav>
+        <a href="/home"><img class="logo" src="../assets/lotr.png" alt=""></a>
+        <div class="dropdown">
+            <button class="dropbtn">Quizes</button>
+            <div class="dropdown-content">
+                <a href="/tenRound">10 Rounds</a>
+                <a href="/suddenDeath">Sudden Death</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Quotes</button>
+            <div class="dropdown-content">
+              <a href="/fav">Favorieten</a>
+              <a href="/blacklist">Blacklisted</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">welkom, <%= locals.user.username %></button>
+            <div class="dropdown-content">
+              <form action="/logout" method="POST">
+                <button class="logout">Log uit</button>
+              </form>
+            </div>
+        </div>
+    </nav>
+
+</header>
