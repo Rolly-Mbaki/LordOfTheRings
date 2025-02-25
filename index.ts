@@ -420,9 +420,9 @@ app.use((req,res)=> {
     res.render("404",{user:req.session.user});
 })
 
-app.listen(app.get("port"), async () => {
+// app.listen(app.get("port"), async () => {
     
-    quotes = await linkCharsAndMovieToQoute()
-    blacklistedQoutes = [...quotes]
-    console.log("[server] http://localhost:" + app.get("port"))
-});
+//     quotes = await linkCharsAndMovieToQoute()
+//     blacklistedQoutes = [...quotes]
+//     console.log("[server] http://localhost:" + app.get("port"))
+// });
