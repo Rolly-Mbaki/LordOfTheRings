@@ -66,15 +66,17 @@ export const linkCharsAndMovieToQoute = async() => {
   let qoutes:Quote[] = await getQoute(limit);
   let chars:Character[] = await getChars(limit);
   let movies:Movie[] = await getMovies(limit);
-  for (let i = 0; i < qoutes.length; i++) {
-    const char:Character = chars.find(char => char._id === qoutes[i].character)!;
-    const movie:Movie = movies.find(movie => movie._id === qoutes[i].movie)!;
-    qoutes[i].character = char.name
-    qoutes[i].wikiUrl = char.wikiUrl
-    if (qoutes[i].character == "MINOR_CHARACTER") {
-      qoutes[i].character = "Minor Character"
+  if (qoutes) {
+    for (let i = 0; i < qoutes.length; i++) {
+      const char:Character = chars.find(char => char._id === qoutes[i].character)!;
+      const movie:Movie = movies.find(movie => movie._id === qoutes[i].movie)!;
+      qoutes[i].character = char.name
+      qoutes[i].wikiUrl = char.wikiUrl
+      if (qoutes[i].character == "MINOR_CHARACTER") {
+        qoutes[i].character = "Minor Character"
+      }
+      qoutes[i].movie = movie.name
     }
-    qoutes[i].movie = movie.name
   }
   return qoutes
 }

@@ -19,10 +19,5 @@
     "express-session": "^1.18.0",
     "mongodb": "^6.6.2",
     "ts-node": "^10.9.2"
-  },
-  "files":[
-    "views",
-    "public",
-    "index.ts"
-  ]
+  }
 }

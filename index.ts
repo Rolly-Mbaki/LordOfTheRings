@@ -2,9 +2,6 @@ import express from "express";
 import ejs from "ejs";
 import dotenv from "dotenv"
 import session from "./session";
-import path from "path";
-
-const __dirname = path.resolve(); // Resolve the current directory
 const {MongoClient} = require('mongodb');
 const bcrypt = require('bcrypt')
 
@@ -47,7 +44,7 @@ let user:User = {
 //middleware
 app.use(session)
 app.use(express.json())
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}))
 
 const isAuth = (req:any, res:any, next:any) =>{
@@ -57,9 +54,6 @@ const isAuth = (req:any, res:any, next:any) =>{
         res.redirect("/login")
     }
 }
-
-app.set("views", path.join(__dirname, "views")); // Absolute path for views
-app.use(express.static(path.join(__dirname, "public"))); // Absolute path for static files
 
 app.set("view engine", "ejs");
 app.set("port", 3000);
@@ -297,10 +291,10 @@ app.post("/like", async (req,res) =>{
         const add = await client.db('LOTR').collection('Users').updateOne(filter, update)
 
         if (add.modifiedCount === 0) {
-            console.log("Quote already exists in the array");
+            // console.log("Quote already exists in the array");
             return res.status(409).send({message:"Quote zit al tussen je favorieten"});
         }
-        console.log("Quote added to favQuotes array");
+        // console.log("Quote added to favQuotes array");
 
         res.status(200).send({ message: "Quote toegevoegd aan je favorieten"});
 
@@ -337,7 +331,7 @@ app.post("/dislike", async (req,res) =>{
                 $pull: { favQuotes: { quote: blQuote.quote } },
                 $addToSet: { blQuotes: blQuote }
             };
-            console.log("Quote moved from favQuotes to blQuotes");
+            // console.log("Quote moved from favQuotes to blQuotes");
         }
         else {
             update = { $addToSet: {blQuotes: blQuote} }
@@ -348,7 +342,7 @@ app.post("/dislike", async (req,res) =>{
         } else {
             await client.db('LOTR').collection('Users').updateOne(filter, update);
             res.status(200).send({ message: "Quote toegevoegd aan je geblacklisten"});
-            console.log("Quote added to blacklist array");
+            // console.log("Quote added to blacklist array");
         }
     } else if (blacklistedQoutes.length <= 10) {
         return res.status(409).send({message:"Je hebt meer dan 10 quotes nodig"});
@@ -362,10 +356,10 @@ app.post("/deleteFavQuote", async (req,res) =>{
         const remove = await client.db('LOTR').collection('Users').updateOne(filter, update)
 
         if (remove.modifiedCount === 0) {
-            console.log("Quote not found in the array")
+            // console.log("Quote not found in the array")
             return res.status(404).send("Quote not found in the array")
         }
-        console.log("Quote removed from favQuotes array");
+        // console.log("Quote removed from favQuotes array");
 
         res.status(200).send("Data deleted from MDB");
 
@@ -379,10 +373,10 @@ app.post("/deleteBlQuote", async (req,res) =>{
         const remove = await client.db('LOTR').collection('Users').updateOne(filter, update)
 
         if (remove.modifiedCount === 0) {
-            console.log("Quote not found in the array")
+            // console.log("Quote not found in the array")
             return res.status(404).send("Quote not found in the array")
         }
-        console.log("Quote removed from favQuotes array");
+        // console.log("Quote removed from favQuotes array");
 
         res.status(200).send("Data deleted from MDB");
 
@@ -401,10 +395,10 @@ app.post("/updateBlQuote", async (req,res) =>{
         const result = await client.db('LOTR').collection('Users').updateOne(filter, update);
 
         if (result.modifiedCount === 0) {
-            console.log("Quote not found in the array")
+            // console.log("Quote not found in the array")
             return res.status(404).send("Quote not found in the array")
         }
-        console.log("Reason changed");
+        // console.log("Reason changed");
 
         res.status(200).send("Reason updated");
 
@@ -426,11 +420,9 @@ app.use((req,res)=> {
     res.render("404",{user:req.session.user});
 })
 
-// app.listen(app.get("port"), async () => {
+app.listen(app.get("port"), async () => {
     
-//     quotes = await linkCharsAndMovieToQoute()
-//     blacklistedQoutes = [...quotes]
-//     console.log("[server] http://localhost:" + app.get("port"))
-// });
-
-module.exports = app;
+    quotes = await linkCharsAndMovieToQoute()
+    blacklistedQoutes = [...quotes]
+    console.log("[server] http://localhost:" + app.get("port"))
+});
