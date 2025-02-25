@@ -1,16 +1,16 @@
 import express from "express";
 import ejs from "ejs";
 import dotenv from "dotenv"
-import session from "./session";
+import session from "../session";
 const {MongoClient} = require('mongodb');
 const bcrypt = require('bcrypt')
 
 dotenv.config()
 
-import { getMovies, getQoute, getApiLength, getChars,getRandomQoutes,linkCharsAndMovieToQoute } from "./public/js/quizGame";
-import { addQuotesToDB } from "./public/js/QuotesDb";
-import { Quote, gameQuote, FavQuote, BlQuote } from "./types/quizTypes";
-import quizRouter from "./routes/quiz";
+import { getMovies, getQoute, getApiLength, getChars,getRandomQoutes,linkCharsAndMovieToQoute } from "../public/js/quizGame";
+import { addQuotesToDB } from "../public/js/QuotesDb";
+import { Quote, gameQuote, FavQuote, BlQuote } from "../types/quizTypes";
+import quizRouter from "../routes/quiz";
 import { log } from "console";
 
 const app = express();

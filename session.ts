@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import {User} from './index'
+import {User} from './api/index'
 dotenv.config();
 
 import session from "express-session";

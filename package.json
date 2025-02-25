@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vervele dev",
     "build": "tsc",
-    "start": "node index.ts"
+    "start": "node api/index.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
