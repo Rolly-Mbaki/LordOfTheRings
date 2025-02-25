@@ -426,3 +426,5 @@ app.use((req,res)=> {
 //     blacklistedQoutes = [...quotes]
 //     console.log("[server] http://localhost:" + app.get("port"))
 // });
+
+export default app;
