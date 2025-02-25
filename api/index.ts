@@ -41,6 +41,15 @@ let user:User = {
     suddenDeathHighScore:0
 };
 
+const fill =  async () => {
+    quotes = await linkCharsAndMovieToQoute()
+    if (quotes) {
+        blacklistedQoutes = [...quotes]
+    }
+}
+
+fill()
+
 //middleware
 app.use(session)
 app.use(express.json())
@@ -422,8 +431,10 @@ app.use((req,res)=> {
 
 // app.listen(app.get("port"), async () => {
     
-//     quotes = await linkCharsAndMovieToQoute()
-//     blacklistedQoutes = [...quotes]
+//     // quotes = await linkCharsAndMovieToQoute()
+//     // if (quotes) {
+//     //     blacklistedQoutes = [...quotes]
+//     // }
 //     console.log("[server] http://localhost:" + app.get("port"))
 // });
 
